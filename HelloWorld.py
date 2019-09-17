@@ -14,3 +14,7 @@ Hello world!
 How are you?
    (I'm fine).
 """
+
+print("Hello World!"
+      "\nHow are you?"
+      "\n   (I'm fine).")
