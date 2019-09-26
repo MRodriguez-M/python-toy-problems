@@ -27,3 +27,8 @@ userNum = int(input("Enter integer: "))
 print("You entered:", userNum)
 print(userNum, "squared is", userNum * userNum)
 print("And", userNum, "cubed is", userNum * userNum * userNum, "!!")
+
+userNum2 = int(input("Enter another integer: "))
+
+print(userNum, "+", userNum2, "is", userNum + userNum2)
+print(userNum, "*", userNum2, "is", userNum * userNum2)
