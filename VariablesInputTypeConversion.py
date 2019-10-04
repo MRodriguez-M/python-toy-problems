@@ -35,3 +35,5 @@ userStr = (input("Enter string: "))
 
 print(userInt, userFloat, userChar, userStr)
 print(userStr, userChar, userFloat, userInt)
+
+print(userInt, "converted to a character is", chr(userInt))
