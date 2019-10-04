@@ -34,3 +34,4 @@ userChar = (input("Enter character: "))
 userStr = (input("Enter string: "))
 
 print(userInt, userFloat, userChar, userStr)
+print(userStr, userChar, userFloat, userInt)
