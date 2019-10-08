@@ -42,3 +42,13 @@ print("\nLemonade ingredients - yields", servingSize, "servings")
 print(lemonJuiceCups, "cup(s) lemon juice")
 print(waterCups, "cup(s) water")
 print(agaveNectarCups, "cup(s) agave nectar")
+
+makeLemonade = float(input("\nHow many servings would you like to make? "))
+newLemonJuice = ((makeLemonade / servingSize) * lemonJuiceCups)
+newWater = ((makeLemonade / servingSize) * waterCups)
+newAgaveNectar = ((makeLemonade / servingSize) * agaveNectarCups)
+
+print("\nLemonade ingredients - yields", makeLemonade, "servings")
+print(newLemonJuice, "cup(s) lemon juice")
+print(newWater, "cup(s) water")
+print(newAgaveNectar, "cup(s) agave nectar")
