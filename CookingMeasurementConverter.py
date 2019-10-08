@@ -52,3 +52,12 @@ print("\nLemonade ingredients - yields", makeLemonade, "servings")
 print(newLemonJuice, "cup(s) lemon juice")
 print(newWater, "cup(s) water")
 print(newAgaveNectar, "cup(s) agave nectar")
+
+gallonLemonJuice = (newLemonJuice / 16)
+gallonWater = (newWater / 16)
+gallonAgaveNectar = (newAgaveNectar / 16)
+
+print("\nLemonade ingredients - yields", makeLemonade, "servings")
+print(gallonLemonJuice, "gallon(s) lemon juice")
+print(gallonWater, "gallon(s) water")
+print(gallonAgaveNectar, "gallon(s) agave nectar")
