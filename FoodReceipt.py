@@ -64,3 +64,14 @@ itemTotal = itemQuantity * itemPrice
 print("\nRECEIPT")
 print(itemQuantity, itemName, "@ $", itemPrice, "= $", itemTotal)
 print("Total cost: $", itemTotal)
+
+itemName2 = input("\n\nEnter second food item name: ")
+itemPrice2 = float(input("Enter item price: "))
+itemQuantity2 = int(input("Enter item quantity: "))
+itemTotal2 = itemQuantity2 * itemPrice2
+totalCost = itemTotal + itemTotal2
+
+print("\nRECEIPT")
+print(itemQuantity, itemName, "@ $", itemPrice, "= $", itemTotal)
+print(itemQuantity2, itemName2, "@ $", itemPrice2, "= $", itemTotal2)
+print("Total cost: $", totalCost)
