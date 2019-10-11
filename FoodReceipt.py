@@ -75,3 +75,9 @@ print("\nRECEIPT")
 print(itemQuantity, itemName, "@ $", itemPrice, "= $", itemTotal)
 print(itemQuantity2, itemName2, "@ $", itemPrice2, "= $", itemTotal2)
 print("Total cost: $", totalCost)
+
+gratuity =  totalCost * .15
+grandTotal = totalCost + gratuity
+
+print("\n15% gratuity: $", gratuity)
+print("Total with tip: $", grandTotal)
