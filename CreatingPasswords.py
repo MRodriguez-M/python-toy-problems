@@ -55,3 +55,6 @@ password2 = number + favoriteColor + number
 
 print("\nFirst password: %s_%s" % (favoriteColor, petName))
 print("Second password: %s%s%s" % (number, favoriteColor, number))
+
+print("\nNumber of characters in", password1 + ": %d" % len(password1))
+print("Number of characters in", password2 + ": %d" % len(password2))
