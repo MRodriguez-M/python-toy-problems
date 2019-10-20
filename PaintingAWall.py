@@ -45,3 +45,7 @@ wallWidth = float(input("Enter wall width (feet): "))
 # Calculate and output area of wall
 wallArea = wallHeight * wallWidth
 print("Wall area:", wallArea, "square feet")
+
+# Calculate and output amount of paint needed
+paintNeeded = wallArea / 350
+print("Paint needed:", paintNeeded, "gallons")
