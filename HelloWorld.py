@@ -15,6 +15,7 @@ How are you?
    (I'm fine).
 """
 
+# Output basic three sentence statement
 print("Hello World!"
       "\nHow are you?"
       "\n   (I'm fine).")
