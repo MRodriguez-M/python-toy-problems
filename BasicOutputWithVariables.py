@@ -22,13 +22,17 @@ Enter another integer: 5
 4 * 5 is 20
 """
 
+# Prompt user for a number
 userNum = int(input("Enter integer: "))
 
+# Output user input in three basic statements
 print("You entered:", userNum)
 print(userNum, "squared is", userNum * userNum)
 print("And", userNum, "cubed is", userNum * userNum * userNum, "!!")
 
+# Prompt user for a second number
 userNum2 = int(input("Enter another integer: "))
 
+# Output both user inputs using addition and multiplication
 print(userNum, "+", userNum2, "is", userNum + userNum2)
 print(userNum, "*", userNum2, "is", userNum * userNum2)
