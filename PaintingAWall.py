@@ -37,6 +37,7 @@ Cans needed: 1 can(s)
 Choose a color to paint the wall: red
 Cost of purchasing red paint: $35
 """
+import math
 
 # Prompt user for wall height and width
 wallHeight = float(input("Enter wall height (feet): "))
@@ -49,3 +50,7 @@ print("Wall area:", wallArea, "square feet")
 # Calculate and output amount of paint needed
 paintNeeded = wallArea / 350
 print("Paint needed:", paintNeeded, "gallons")
+
+# Calculate and output number of cans of paint needed
+cansNeeded = math.ceil(paintNeeded)
+print("Cans needed:", cansNeeded, "can(s)")
