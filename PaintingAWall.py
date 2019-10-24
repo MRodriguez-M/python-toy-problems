@@ -39,6 +39,13 @@ Cost of purchasing red paint: $35
 """
 import math
 
+# Dictionary of paint colors and cost per gallon
+paintColors = {
+    "red": 35,
+    "blue": 25,
+    "green": 23
+}
+
 # Prompt user for wall height and width
 wallHeight = float(input("Enter wall height (feet): "))
 wallWidth = float(input("Enter wall width (feet): "))
@@ -54,3 +61,10 @@ print("Paint needed:", paintNeeded, "gallons")
 # Calculate and output number of cans of paint needed
 cansNeeded = math.ceil(paintNeeded)
 print("Cans needed:", cansNeeded, "can(s)")
+
+# Prompt user for wall color
+wallColor = input("\nChoose a color to paint the wall: ")
+
+# Calculate and output total cost of paint needed
+paintCost = paintColors[wallColor] * cansNeeded
+print("Cost of purchasing", wallColor, "paint: $%d" % paintCost)
