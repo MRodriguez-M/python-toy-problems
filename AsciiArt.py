@@ -15,6 +15,7 @@
   ---
 """
 
+# Output pine tree
 print("   *")
 print("  ***")
 print(" *****")
@@ -23,6 +24,7 @@ print("  ***")
 
 print("\n")
 
+# Output cat face
 print("/\\   /\\")
 print("  o o")
 print(" =   =")
