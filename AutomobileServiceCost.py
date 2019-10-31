@@ -28,5 +28,9 @@ services = {
 autoService = input("Enter desired service: ")
 print("You entered:", autoService)
 
+# If statement to check if service is available, print service with price if available
 if autoService in services:
     print("\nCost of", autoService.lower() + ": $%s" % services[autoService])
+# If service not available, print error message
+else:
+    print("\nError: Requested service is not recognized.")
