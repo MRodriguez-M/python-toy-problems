@@ -53,5 +53,15 @@ print("Davy's auto shop services"
       "\nCar wash -- $7"
       "\nCar wax -- $12")
 
+# Prompt user for two services from list
 firstService = input("\nSelect first service: ")
 secondService = input("\nSelect second service: ")
+
+# Output services requested and prices
+print("\n\nDavy's auto shop invoice")
+print("\nService 1:", firstService + ", $%d" % services[firstService])
+print("Service 2:", secondService + ", $%d" % services[secondService])
+
+# Calculate and output total cost of both services
+totalCost = services[firstService] + services[secondService]
+print("\nTotal: $%d" % totalCost)
