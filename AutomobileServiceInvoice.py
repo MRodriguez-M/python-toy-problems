@@ -52,3 +52,6 @@ print("Davy's auto shop services"
       "\nTire rotation -- $19"
       "\nCar wash -- $7"
       "\nCar wax -- $12")
+
+firstService = input("\nSelect first service: ")
+secondService = input("\nSelect second service: ")
