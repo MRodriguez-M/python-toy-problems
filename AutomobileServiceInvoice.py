@@ -38,12 +38,13 @@ Service 2: No service
 Total: $19
 """
 
-# Dictionary of available services
+# Dictionary of available service options
 services = {
     "Oil change": 35,
     "Tire rotation": 19,
     "Car wash": 7,
-    "Car wax": 12
+    "Car wax": 12,
+    "-": 0
 }
 
 # Print list of available services
@@ -57,10 +58,20 @@ print("Davy's auto shop services"
 firstService = input("\nSelect first service: ")
 secondService = input("\nSelect second service: ")
 
-# Output services requested and prices
+# Output start of service invoice
 print("\n\nDavy's auto shop invoice")
-print("\nService 1:", firstService + ", $%d" % services[firstService])
-print("Service 2:", secondService + ", $%d" % services[secondService])
+
+# If-else statement to output first service requested and price or no service 
+if firstService == "-":
+    print("\nService 1: No service")
+else:
+    print("\nService 1:", firstService + ", $%d" % services[firstService])
+
+# If-else statement to output first service requested and price or no service 
+if secondService == "-":
+    print("Service 2: No service")
+else:
+    print("Service 2:", secondService + ", $%d" % services[secondService])
 
 # Calculate and output total cost of both services
 totalCost = services[firstService] + services[secondService]
