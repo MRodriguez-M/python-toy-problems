@@ -28,12 +28,16 @@ Howdy z 3.77 99
 99 converted to a character is c
 """
 
+# Prompt user for integer, float, character, and string
 userInt = int(input("Enter integer (0 - 155): "))
 userFloat = float(input("Enter float: "))
 userChar = (input("Enter character: "))
 userStr = (input("Enter string: "))
 
+# Print user input
 print(userInt, userFloat, userChar, userStr)
+# Print user input in reverse order
 print(userStr, userChar, userFloat, userInt)
 
+# Convert and output user integer as a character
 print(userInt, "converted to a character is", chr(userInt))
