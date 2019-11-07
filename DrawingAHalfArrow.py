@@ -30,6 +30,7 @@ arrow_base_height = int(input("Enter arrow base height: "))
 arrow_base_width = int(input("Enter arrow base width: "))
 arrow_head_width = int(input("Enter arrow head width: "))
 
-# For loop to print height of rectangle
+# For loop to print rectangle part of half arrow
 for h in range(arrow_base_height):
-    print("*")
+    h = "*" * arrow_base_width
+    print(h)
