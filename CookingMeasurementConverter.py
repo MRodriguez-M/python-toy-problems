@@ -33,30 +33,38 @@ Lemonade ingredients - yields 48.0 servings
 1.25 gallon(s) agave nectar
 """
 
+# Prompt user for ingredient amounts and serving size for recipe
 lemonJuiceCups = float(input("Enter amount of lemon juice (in cups): "))
 waterCups = float(input("Enter amount of water (in cups): "))
 agaveNectarCups = float(input("Enter amount of agave nectar (in cups): "))
 servingSize = float(input("How many servings does this make? "))
 
+# Output recipe ingredients and serving size
 print("\nLemonade ingredients - yields", servingSize, "servings")
 print(lemonJuiceCups, "cup(s) lemon juice")
 print(waterCups, "cup(s) water")
 print(agaveNectarCups, "cup(s) agave nectar")
 
+# Prompt user for amount of servings wanted
 makeLemonade = float(input("\nHow many servings would you like to make? "))
+
+# Calculate new ingredient amounts based on servings requested
 newLemonJuice = ((makeLemonade / servingSize) * lemonJuiceCups)
 newWater = ((makeLemonade / servingSize) * waterCups)
 newAgaveNectar = ((makeLemonade / servingSize) * agaveNectarCups)
 
+# Output ingredient amounts and servings based on user input
 print("\nLemonade ingredients - yields", makeLemonade, "servings")
 print(newLemonJuice, "cup(s) lemon juice")
 print(newWater, "cup(s) water")
 print(newAgaveNectar, "cup(s) agave nectar")
 
+# Convert ingredient amounts from cups to gallons
 gallonLemonJuice = (newLemonJuice / 16)
 gallonWater = (newWater / 16)
 gallonAgaveNectar = (newAgaveNectar / 16)
 
+# Output ingredient amounts based on user requested servings in gallons
 print("\nLemonade ingredients - yields", makeLemonade, "servings")
 print(gallonLemonJuice, "gallon(s) lemon juice")
 print(gallonWater, "gallon(s) water")
