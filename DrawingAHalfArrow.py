@@ -34,3 +34,9 @@ arrow_head_width = int(input("Enter arrow head width: "))
 for h in range(arrow_base_height):
     h = "*" * arrow_base_width
     print(h)
+
+# For loop to print right triangle for arrow head
+for w in range(arrow_head_width):
+    w = "*" * arrow_head_width 
+    print(w)
+    arrow_head_width = arrow_head_width - 1
