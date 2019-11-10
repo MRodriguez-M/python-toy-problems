@@ -44,17 +44,22 @@ Number of characters in yellow_Daisy: 12
 Number of characters in 6yellow6: 8
 """
 
+# Prompt user for elements of password
 favoriteColor = input("Enter favorite color:\n")
 petName = input("Enter pet's name:\n")
 number = input("Enter a number:\n")
 
+# Output user input
 print("\n" + favoriteColor, petName, number)
 
+# Create templates for both passwords based on user input
 password1 = favoriteColor + "_" + petName
 password2 = number + favoriteColor + number
 
+# Output both passwords using templates created
 print("\nFirst password: %s_%s" % (favoriteColor, petName))
 print("Second password: %s%s%s" % (number, favoriteColor, number))
 
+# Output number of characters in each password generated
 print("\nNumber of characters in", password1 + ": %d" % len(password1))
 print("Number of characters in", password2 + ": %d" % len(password2))
