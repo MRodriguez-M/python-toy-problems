@@ -44,4 +44,8 @@ Enter input string: q
 """
 
 # Prompt user for string
-input("Enter input string: ")
+string = input("Enter input string: ")
+
+# If statement to check for comma in user string
+if "," not in string:
+    print("Error: No comma in string.")
