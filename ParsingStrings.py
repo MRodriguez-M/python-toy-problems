@@ -43,14 +43,24 @@ Second word: DC
 Enter input string: q
 """
 
-# Prompt user for string
-string = input("Enter input string: ")
+# While loop to continue program until user input is "q"
+while True:
+    # Prompt user for string
+    string = input("Enter input string: ")
 
-# If statement to check for comma in user string
-if "," not in string:
-    print("Error: No comma in string.")
-
-# Use split method to split string in two and output both strings without spaces
-newStrings = string.split(",")
-print("First word:", newStrings[0].replace(" ", ""))
-print("Second word:", newStrings[1].replace(" ", ""))
+    # If statement to check that user input is not "q"
+    if string != "q":
+        # If statement to check for comma in user string
+        if "," in string:
+            # Use split method to split string in two and output both strings without spaces
+            newStrings = string.split(",")
+            print("First word:", newStrings[0].replace(" ", ""))
+            print("Second word:", newStrings[1].replace(" ", ""))
+            print("\n")
+        else:
+            # Print error message if no comma found in user string
+            print("Error: No comma in string.")
+            print("\n")
+    else:
+        # Break to end program if user input is "q"
+        break
