@@ -60,7 +60,6 @@ while True:
         else:
             # Print error message if no comma found in user string
             print("Error: No comma in string.")
-            print("\n")
     else:
         # Break to end program if user input is "q"
         break
