@@ -90,3 +90,11 @@ Each name is right justified with a minimum field width value of 20.
 # Prompt user for data title and output user input
 dataTitle = input("Enter a title for the data: ")
 print("You entered:", dataTitle)
+
+# Prompt user for column 1 header and output user input
+column1 = input("\nEnter the column 1 header: ")
+print("You entered:", column1)
+
+# Prompt user for column 2 header and output user input
+column2 = input("\nEnter the column 2 header: ")
+print("You entered:", column2)
