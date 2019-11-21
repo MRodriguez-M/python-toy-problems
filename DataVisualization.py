@@ -108,10 +108,21 @@ while True:
     if dataPoint != "-1":
         # If statement to check for comma in user input
         if "," in dataPoint:
-            # Use split method to split data point in two and output string and integer separately
+            # Use split method to split data point in two
             dataInfo = dataPoint.split(",")
-            print("Data string:", dataInfo[0])
-            print("Data integer:", dataInfo[1].replace(" ", ""))
+            # If statement to check and output error message if user input has more than one comma
+            if len(dataInfo) > 2:
+                print("Error: Too many commas in input.")
+            # Elif to check and output error message if second part of string is not an integer
+            elif not dataInfo[1].isdigit():
+                print("Error: Comma not followed by an integer.")
+            else:
+                # Output string and integer data separtely
+                print("Data string:", dataInfo[0])
+                print("Data integer:", dataInfo[1].replace(" ", ""))
+        # Output error message if no comma in user input
+        elif "," not in dataPoint:
+            print("Error: No comma in string.")
     else:
         # Break to stop prompting for data if user input is "-1"
         break
