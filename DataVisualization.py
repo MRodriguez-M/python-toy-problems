@@ -98,3 +98,20 @@ print("You entered:", column1)
 # Prompt user for column 2 header and output user input
 column2 = input("\nEnter the column 2 header: ")
 print("You entered:", column2)
+
+# While loop to continue prompting for data until user input is "-1"
+while True:
+    # Prompt user for data point
+    dataPoint = input("\nEnter a data point (-1 to stop input): ")
+
+    # If statement to check that user input is not "-1"
+    if dataPoint != "-1":
+        # If statement to check for comma in user input
+        if "," in dataPoint:
+            # Use split method to split data point in two and output string and integer separately
+            dataInfo = dataPoint.split(",")
+            print("Data string:", dataInfo[0])
+            print("Data integer:", dataInfo[1].replace(" ", ""))
+    else:
+        # Break to stop prompting for data if user input is "-1"
+        break
