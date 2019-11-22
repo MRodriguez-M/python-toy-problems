@@ -99,10 +99,13 @@ print("You entered:", column1)
 column2 = input("\nEnter the column 2 header: ")
 print("You entered:", column2)
 
+# Set variable for message to prompt user input
+inputMessage = "\nEnter a data point (-1 to stop input): "
+
 # While loop to continue prompting for data until user input is "-1"
 while True:
     # Prompt user for data point
-    dataPoint = input("\nEnter a data point (-1 to stop input): ")
+    dataPoint = input(inputMessage)
 
     # If statement to check that user input is not "-1"
     if dataPoint != "-1":
@@ -110,19 +113,24 @@ while True:
         if "," in dataPoint:
             # Use split method to split data point in two
             dataInfo = dataPoint.split(",")
-            # If statement to check and output error message if user input has more than one comma
+            # If statement to check and output error message if user input has more than one comma and reassign message to prompt valid user input
             if len(dataInfo) > 2:
                 print("Error: Too many commas in input.")
-            # Elif to check and output error message if second part of string is not an integer
+                inputMessage = "\nEnter a valid data point: "
+            # Elif to check and output error message if second part of string is not an integer and reassign message to prompt valid user input
             elif not dataInfo[1].isdigit():
                 print("Error: Comma not followed by an integer.")
+                inputMessage = "\nEnter a valid data point: "
             else:
                 # Output string and integer data separtely
                 print("Data string:", dataInfo[0])
                 print("Data integer:", dataInfo[1].replace(" ", ""))
-        # Output error message if no comma in user input
+                # Assign prompt message to original in case it was reassigned by an error message
+                inputMessage = "\nEnter a data point (-1 to stop input): "
+        # Output error message if no comma in user input and reassign message to prompt valid user input
         elif "," not in dataPoint:
             print("Error: No comma in string.")
+            inputMessage = "\nEnter a valid data point: "
     else:
         # Break to stop prompting for data if user input is "-1"
         break
