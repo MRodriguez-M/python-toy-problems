@@ -101,6 +101,7 @@ print("You entered:", column2)
 
 # Set variable for message to prompt user input
 inputMessage = "\nEnter a data point (-1 to stop input): "
+# Create list that will contain all data points
 dataList = []
 
 # While loop to continue prompting for data until user input is "-1"
@@ -128,6 +129,7 @@ while True:
                 print("Data integer:", dataInfo[1].replace(" ", ""))
                 # Assign prompt message to original in case it was reassigned by an error message
                 inputMessage = "\nEnter a data point (-1 to stop input): "
+                # Add data points to end of list
                 dataList.extend(dataInfo)
         # Output error message if no comma in user input and reassign message to prompt valid user input
         elif "," not in dataPoint:
@@ -137,11 +139,14 @@ while True:
         # Break to stop prompting for data if user input is "-1"
         break
 
+# Output title, both column titles, and a separting line of dashes for head of table
 print("\n%33s" % dataTitle)
 print("%-20s|%23s" % (column1, column2))
 print("-" * 44)
 
+# Create variable to iterate through dataList
 index = 0
+# While loop to print all elements in dataList to table
 while index < len(dataList):
     print(dataList[index], "|", dataList[index + 1])
     index += 2
