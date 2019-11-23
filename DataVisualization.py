@@ -101,6 +101,7 @@ print("You entered:", column2)
 
 # Set variable for message to prompt user input
 inputMessage = "\nEnter a data point (-1 to stop input): "
+dataList = []
 
 # While loop to continue prompting for data until user input is "-1"
 while True:
@@ -118,7 +119,7 @@ while True:
                 print("Error: Too many commas in input.")
                 inputMessage = "\nEnter a valid data point: "
             # Elif to check and output error message if second part of string is not an integer and reassign message to prompt valid user input
-            elif not dataInfo[1].isdigit():
+            elif not dataInfo[1].replace(" ", "").isdigit():
                 print("Error: Comma not followed by an integer.")
                 inputMessage = "\nEnter a valid data point: "
             else:
@@ -127,6 +128,7 @@ while True:
                 print("Data integer:", dataInfo[1].replace(" ", ""))
                 # Assign prompt message to original in case it was reassigned by an error message
                 inputMessage = "\nEnter a data point (-1 to stop input): "
+                dataList.extend(dataInfo)
         # Output error message if no comma in user input and reassign message to prompt valid user input
         elif "," not in dataPoint:
             print("Error: No comma in string.")
@@ -134,3 +136,12 @@ while True:
     else:
         # Break to stop prompting for data if user input is "-1"
         break
+
+print("\n%33s" % dataTitle)
+print("%-20s|%23s" % (column1, column2))
+print("-" * 44)
+
+index = 0
+while index < len(dataList):
+    print(dataList[index], "|", dataList[index + 1])
+    index += 2
