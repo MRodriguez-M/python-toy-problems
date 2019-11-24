@@ -156,5 +156,5 @@ i = 0
 print("")
 # While loop to print all elements in dataList to histogram
 while i < len(dataList):
-    print("%s" % (dataList[i]))
+    print("%s %s" % (dataList[i], (int(dataList[i + 1]) * "*")))
     i += 2
