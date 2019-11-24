@@ -148,5 +148,5 @@ print("-" * 44)
 index = 0
 # While loop to print all elements in dataList to table
 while index < len(dataList):
-    print(dataList[index], "|", dataList[index + 1])
+    print("%-20s|%23s" % (dataList[index], dataList[index + 1]))
     index += 2
