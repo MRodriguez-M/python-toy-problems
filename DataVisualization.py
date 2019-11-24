@@ -150,3 +150,11 @@ index = 0
 while index < len(dataList):
     print("%-20s|%23s" % (dataList[index], dataList[index + 1]))
     index += 2
+
+# Create variable to iterate through dataList for histogram
+i = 0
+print("")
+# While loop to print all elements in dataList to histogram
+while i < len(dataList):
+    print("%s" % (dataList[i]))
+    i += 2
