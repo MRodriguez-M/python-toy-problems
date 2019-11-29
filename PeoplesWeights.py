@@ -59,3 +59,5 @@ weights.append(weight4)
 
 # Output list of weights
 print("\nWeights:", weights)
+# Calculate and output average of the four weights
+print("Average weight:", (sum(weights) / 4))
