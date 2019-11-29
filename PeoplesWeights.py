@@ -61,3 +61,5 @@ weights.append(weight4)
 print("\nWeights:", weights)
 # Calculate and output average of the four weights
 print("Average weight:", (sum(weights) / 4))
+# Use max() function to output largest weight in list
+print("Max weight:", max(weights))
