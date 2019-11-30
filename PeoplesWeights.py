@@ -63,3 +63,10 @@ print("\nWeights:", weights)
 print("Average weight:", (sum(weights) / 4))
 # Use max() function to output largest weight in list
 print("Max weight:", max(weights))
+
+# Prompt user for index value
+index = int(input("\nEnter a list index (1 - 4): "))
+# Output corresponding weight to index in pounds
+print("Weight in pounds:", weights[index - 1])
+# Calculate and output corresponding weight to index in kilograms
+print("Weight in kilograms:", (weights[index - 1] / 2.2))
