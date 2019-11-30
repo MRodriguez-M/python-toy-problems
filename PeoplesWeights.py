@@ -70,3 +70,7 @@ index = int(input("\nEnter a list index (1 - 4): "))
 print("Weight in pounds:", weights[index - 1])
 # Calculate and output corresponding weight to index in kilograms
 print("Weight in kilograms:", (weights[index - 1] / 2.2))
+
+# Use sort() method to output sorted list
+weights.sort()
+print("\nSorted list:", weights)
