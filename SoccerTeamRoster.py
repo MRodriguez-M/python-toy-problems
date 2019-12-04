@@ -95,3 +95,10 @@ while count <= 5:
     # Convert dictionary into a list
     rosterList = list(rosterDict.keys())
     count += 1
+
+# Sort list based on jersey number
+rosterList = sorted(rosterList)
+print("\nROSTER")
+# For loop to output player information
+for jerseyNumber in rosterList:
+    print("Jersey number: %d, Rating: %d" % (jerseyNumber, rosterDict[jerseyNumber]))
