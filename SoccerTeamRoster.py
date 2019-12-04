@@ -81,21 +81,17 @@ Jersey number: 84, Rating: 7
 ...
 """
 
-# Prompt user for information on five players 
-jerseyNumber1 = int(input("Enter player 1's jersey number: "))
-rating1 = int(input("Enter player 1's rating: "))
-jerseyNumber2 = int(input("\nEnter player 2's jersey number: "))
-rating2 = int(input("Enter player 2's rating: "))
-jerseyNumber3 = int(input("\nEnter player 3's jersey number: "))
-rating3 = int(input("Enter player 3's rating: "))
-jerseyNumber4 = int(input("\nEnter player 4's jersey number: "))
-rating4 = int(input("Enter player 4's rating: "))
-jerseyNumber5 = int(input("\nEnter player 5's jersey number: "))
-rating5 = int(input("Enter player 5's rating: "))
+# Variables to help create dictionary of five players
+count = 1
+rosterDict = {}
 
-# Create dictionary of five players
-rosterDict = dict({jerseyNumber1: rating1,
-                  jerseyNumber2: rating2,
-                  jerseyNumber3: rating3,
-                  jerseyNumber4: rating4,
-                  jerseyNumber5: rating5})
+# While Loop to get user input for information for five players
+while count <= 5:
+    jerseyNumber = int(input("Enter player %d's jersey number: " % count))
+    rating = int(input("Enter player %d's rating: " % count))
+    print("")
+    # Add information into a dictionary
+    rosterDict[jerseyNumber] = rating
+    # Convert dictionary into a list
+    rosterList = list(rosterDict.keys())
+    count += 1
