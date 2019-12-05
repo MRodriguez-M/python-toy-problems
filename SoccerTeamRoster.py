@@ -102,3 +102,25 @@ print("\nROSTER")
 # For loop to output player information
 for jerseyNumber in rosterList:
     print("Jersey number: %d, Rating: %d" % (jerseyNumber, rosterDict[jerseyNumber]))
+
+# Output menu options
+print("\nMENU")
+print("a - Add player")
+print("d - Remove player")
+print("u - Update player rating")
+print("r - Output players above a rating")
+print("o - Output roster")
+print("q - Quit")
+
+# While loop to continue prompting until user input is "q"
+while True:
+    # Prompt user to select an option from the menu
+    menuOption = input("\nChoose an option: ")
+    
+    # If statement to check that input is not "q"
+    if menuOption != "q":
+        # FIXME placeholder action until menu options are further implemented
+        print("")
+    else:
+        # Break to exit program if user input is "q"
+        break
