@@ -122,11 +122,28 @@ while True:
     
     # If statement to check that input is not "q"
     if menuOption != "q":
+        # If statement to execute if user input is "o"
         if menuOption == "o":
             print("\nROSTER")
             # For loop to output player information
             for jerseyNumber in rosterList:
                 print("Jersey number: %d, Rating: %d" % (jerseyNumber, rosterDict[jerseyNumber]))
+            print(menu)
+        # Elif statement to execute if user input is "a"
+        elif menuOption == "a":
+            # Create variable to help add new player to dictionary
+            newRosterDict = {}
+            # Prompt user for new player jersey number and rating
+            addJerseyNumber = int(input("\nEnter a new player's jersey number: "))
+            addRating = int(input("Enter the player's rating: "))
+            # Add new information into a dictionary
+            newRosterDict[addJerseyNumber] = addRating
+            # Add dictionary with new information to dictionary with existing player information
+            rosterDict.update(newRosterDict)
+            # Convert dictionary into a list
+            rosterList = list(rosterDict.keys())
+            # Sort list based on jersey number
+            rosterList = sorted(rosterList)
             print(menu)
     else:
         # Break to exit program if user input is "q"
