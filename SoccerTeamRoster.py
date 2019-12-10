@@ -156,6 +156,22 @@ while True:
             # Sort list based on jersey number
             rosterList = sorted(rosterList)
             print(menu)
+        # Elif statement to execute if user input is "u"
+        elif menuOption == "u":
+            # Create variable to help add updated player information to dictionary
+            updateRosterDict = {}
+            # Prompt user for player jersey number and new rating
+            updateJerseyNumber = int(input("\nEnter a jersey number: "))
+            updateRating = int(input("Enter a new rating for player: "))
+            # Add updated information into a dictionary
+            updateRosterDict[updateJerseyNumber] = updateRating
+            # Add dictionary with updated information to dictionary with existing player information
+            rosterDict.update(updateRosterDict)
+            # Convert dictionary into a list
+            rosterList = list(rosterDict.keys())
+            # Sort list based on jersey number
+            rosterList = sorted(rosterList)
+            print(menu)
     else:
         # Break to exit program if user input is "q"
         break
