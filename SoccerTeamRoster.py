@@ -145,6 +145,17 @@ while True:
             # Sort list based on jersey number
             rosterList = sorted(rosterList)
             print(menu)
+        # Elif statment to execute if user input is "d"
+        elif menuOption == "d":
+            # Prompt user for jersey number to remove from roster
+            deletePlayer = int(input("\nEnter a jersey number: "))
+            # Delete player information from dictionary
+            del rosterDict[deletePlayer]
+            # Convert updated dictionary into a list
+            rosterList = list(rosterDict.keys())
+            # Sort list based on jersey number
+            rosterList = sorted(rosterList)
+            print(menu)
     else:
         # Break to exit program if user input is "q"
         break
