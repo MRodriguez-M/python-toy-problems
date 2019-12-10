@@ -172,6 +172,20 @@ while True:
             # Sort list based on jersey number
             rosterList = sorted(rosterList)
             print(menu)
+        # Elif statement to execute to if user input is "r"
+        elif menuOption == "r":
+            # Prompt user for rating
+            aboveRating = int(input("\nEnter a rating: "))
+            print("\nABOVE", aboveRating)
+            # For loop to check dictionary for ratings above user input
+            for j, r in rosterDict.items():
+                # Output player information if rating is above user input
+                if r > aboveRating:
+                    print("Jersey number: %d, Rating: %d" % (j, r))
+                else:
+                    # Do not print and continue to loop through dictionary if rating is not above user input
+                    continue
+            print(menu)
     else:
         # Break to exit program if user input is "q"
         break
