@@ -127,3 +127,15 @@ movieCollection = {
     "2015": [["Spotlight", "Tom McCarthy"]],
     "2016": [["The BFG", "Steven Spielberg"]]
 }
+
+# Prompt user for a year
+year = input("Enter a year between 2005 and 2016: \n")
+
+# If statement to check if user input is available in dictionary
+if year in movieCollection:
+    # Print film title and director based on user input
+    for m in movieCollection.get(year):
+        print(m[0] + ", " + m[1])
+else:
+    # Print error message if user input not in dictionary
+    print("N/A")
