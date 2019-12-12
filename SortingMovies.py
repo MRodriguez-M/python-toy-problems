@@ -139,3 +139,27 @@ if year in movieCollection:
 else:
     # Print error message if user input not in dictionary
     print("N/A")
+
+# Create and output menu options
+menu = """
+MENU
+Sort by:
+y - Year
+d - Director
+t - Movie title
+q - Quit
+"""
+print(menu)
+
+# While loop to continue prompting until user input is "q"
+while True:
+    # Prompt user to select an option from the menu
+    menuOption = input("Choose an option: ")
+
+    # If statement to check that user input is not "q"
+    if menuOption != "q":
+        # FIXME placeholder for menu options that will be implemented later
+        print("")
+    else:
+        # Break to exit program if user input is "q"
+        break
