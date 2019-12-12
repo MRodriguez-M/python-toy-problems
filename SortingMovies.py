@@ -158,13 +158,16 @@ while True:
 
     # If statement to check that user input is not "q"
     if menuOption != "q":
+        # If statement to execute if user input is "y"
         if menuOption == "y":
+            # For loop to output film year
             for y, film in movieCollection.items():
                 print("%s:" % y)
+                # For loop to output film title and director
                 for title, director in film:
                     print("\t%s, %s" % (title, director))
                 print("")
-                #FIXME add menu and comments
+            print(menu)
     else:
         # Break to exit program if user input is "q"
         break
