@@ -129,7 +129,7 @@ movieCollection = {
 }
 
 # Prompt user for a year
-year = input("Enter a year between 2005 and 2016: \n")
+year = input("Enter a year between 2005 and 2016:\n")
 
 # If statement to check if user input is available in dictionary
 if year in movieCollection:
@@ -154,12 +154,17 @@ print(menu)
 # While loop to continue prompting until user input is "q"
 while True:
     # Prompt user to select an option from the menu
-    menuOption = input("Choose an option: ")
+    menuOption = input("Choose an option:\n")
 
     # If statement to check that user input is not "q"
     if menuOption != "q":
-        # FIXME placeholder for menu options that will be implemented later
-        print("")
+        if menuOption == "y":
+            for y, film in movieCollection.items():
+                print("%s:" % y)
+                for title, director in film:
+                    print("\t%s, %s" % (title, director))
+                print("")
+                #FIXME add menu and comments
     else:
         # Break to exit program if user input is "q"
         break
