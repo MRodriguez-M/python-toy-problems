@@ -168,24 +168,26 @@ while True:
                     print("\t%s, %s" % (title, director))
                 print("")
             print(menu)
+        # If statement to execute if user input is "d"
         if menuOption == "d":
+            # Create variable to create new dictionary
             directorDict = {}
+            # For loops to check for years, titles, and directors in dictionary
             for year, film in movieCollection.items():
                 for title, director in film:
+                    # If statement to check and add director not already key in new dictionary
                     if director not in directorDict:
                         directorDict[director] = []
+                    # Add film title and year to corresponding director
                     directorDict[director].append([title, year])
-            print(directorDict)
-            """directorList = []
-            for film in movieCollection.values():
-                for title, director in film:
-                    if director not in directorList:
-                        directorList.append(director)
-            for d in sorted(directorList):
+            # For loop to output director name in alphabetical order based on first name
+            for d, film in sorted(directorDict.items()):
                 print("%s:" % d)
-                for year, film in movieCollection.items():
-                    for title, director in film:
-                        print()"""
+                # For loop to output film title and year
+                for title, year in film:
+                    print("\t%s, %s" % (title, year))
+                print("")
+            print(menu)
     else:
         # Break to exit program if user input is "q"
         break
