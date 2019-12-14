@@ -168,8 +168,8 @@ while True:
                     print("\t%s, %s" % (title, director))
                 print("")
             print(menu)
-        # If statement to execute if user input is "d"
-        if menuOption == "d":
+        # Elif statement to execute if user input is "d"
+        elif menuOption == "d":
             # Create variable to create new dictionary
             directorDict = {}
             # For loops to check for years, titles, and directors in dictionary
@@ -186,6 +186,26 @@ while True:
                 # For loop to output film title and year
                 for title, year in film:
                     print("\t%s, %s" % (title, year))
+                print("")
+            print(menu)
+        # Elif statement to execute if user input is "t"
+        elif menuOption == "t":
+            # Create variable to create new dictionary
+            titleDict = {}
+            # For loops to check for years, titles, and directors in dictionary
+            for year, film in movieCollection.items():
+                for title, director in film:
+                    # If statement to check and add title not already key in new dictionary
+                    if title not in titleDict:
+                        titleDict[title] = []
+                    # Add film director and year to title
+                    titleDict[title].append([director, year])
+            # For loop to output film titles in alphabetical order
+            for t, film in sorted(titleDict.items()):
+                print("%s:" % t)
+                # For loop to output film director and year
+                for director, year in film:
+                    print("\t%s, %s" % (director, year))
                 print("")
             print(menu)
     else:
