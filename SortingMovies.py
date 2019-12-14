@@ -168,6 +168,24 @@ while True:
                     print("\t%s, %s" % (title, director))
                 print("")
             print(menu)
+        if menuOption == "d":
+            directorDict = {}
+            for year, film in movieCollection.items():
+                for title, director in film:
+                    if director not in directorDict:
+                        directorDict[director] = []
+                    directorDict[director].append([title, year])
+            print(directorDict)
+            """directorList = []
+            for film in movieCollection.values():
+                for title, director in film:
+                    if director not in directorList:
+                        directorList.append(director)
+            for d in sorted(directorList):
+                print("%s:" % d)
+                for year, film in movieCollection.items():
+                    for title, director in film:
+                        print()"""
     else:
         # Break to exit program if user input is "q"
         break
