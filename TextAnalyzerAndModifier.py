@@ -23,6 +23,12 @@ Number of characters: 46
 String with no whitespace: Theonlythingwehavetofearisfearitself.
 """
 
+def numOfCharacters():
+    count = 0
+    for i in range(len(userString)):
+        count += 1
+    return count
+
 # Prompting user for string and printing user input
 userString = input("Enter a sentence or phrase: ")
 print("You entered:", userString)
