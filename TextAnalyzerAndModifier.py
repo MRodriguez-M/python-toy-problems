@@ -30,9 +30,16 @@ def numOfCharacters():
         count += 1
     return count
 
+# Function to remove whitespace (including whitespace from tab) from user input
+def noWhitespace():
+    newUserString = userString.replace(" ", "").replace("\t", "")
+    return newUserString
+
 # Prompting user for string and printing user input
 userString = input("Enter a sentence or phrase: ")
 print("You entered:", userString)
 
 # Output number of characters in user input
 print("\nNumber of characters:", numOfCharacters())
+# Output user string with no whitespace
+print("String with no whitespace:", noWhitespace())
