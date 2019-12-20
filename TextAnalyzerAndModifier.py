@@ -23,6 +23,7 @@ Number of characters: 46
 String with no whitespace: Theonlythingwehavetofearisfearitself.
 """
 
+# Function to count number of characters in user input
 def numOfCharacters():
     count = 0
     for i in range(len(userString)):
@@ -32,3 +33,6 @@ def numOfCharacters():
 # Prompting user for string and printing user input
 userString = input("Enter a sentence or phrase: ")
 print("You entered:", userString)
+
+# Output number of characters in user input
+print("\nNumber of characters:", numOfCharacters())
