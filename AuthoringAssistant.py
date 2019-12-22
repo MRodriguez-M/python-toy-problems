@@ -62,6 +62,33 @@ Call shorten spaces function in the menu function, and then output the edited st
 Edited text: we'll continue our quest in space. there will be more shuttle flights and more shuttle crews and, yes, more volunteers, more civilians, more teachers in space. nothing ends here; our hopes and our journeys continue!
 """
 
+# Function to output menu options and prompt user to select an option
+def menu():
+    # Output menu
+    print("\nMENU"
+    "\nc - Number of non-whitespace characters"
+    "\nw - Number of words"
+    "\nf - Fix capitalization"
+    "\nr - Replace punctuation"
+    "\ns - Shorten spaces"
+    "\nq - Quit\n")
+    # While loop to continue prompting until user input is "q"
+    while True:
+        # Prompt user to select an option
+        menuOption = input("Choose an option: ")
+
+        # If statement to check that user input is not "q"
+        if menuOption != "q":
+            # Placeholder FIXME
+            pass
+        else:
+            # Break to end program if user input is "q"
+            break
+    return
+
 # Prompt user for string and output user input
 userString = input("Enter a sample text: ")
 print("\nYou entered:", userString)
+
+# Call menu function
+menu()
