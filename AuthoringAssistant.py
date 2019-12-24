@@ -77,7 +77,7 @@ def menu(userString):
     menuOption = input("Choose an option: ")
 
     # While loop to continue prompting if user input is not menu option
-    while menuOption != "q" and menuOption != "c": #FIXME add other menu options
+    while menuOption != "q" and menuOption != "c" and menuOption != "w": #FIXME add other menu options
         menuOption = input("Choose an option: ")
     return menuOption
 
@@ -91,6 +91,12 @@ def nonWhitespaceChar(userString):
         count += 1
     return count
 
+# Function to output the number of words in user string
+def numWords(userString):
+    # Split() combined with len() counts number of words in string based on whitespace
+    words = len(userString.split())
+    return words
+
 # Prompt user for string and output user input
 userString = input("Enter a sample text: ")
 print("\nYou entered:", userString)
@@ -103,4 +109,9 @@ while selectedOption != "q":
     if selectedOption == "c":
         # Call non-whitespace characters function
         print("\nNumber of non-whitespace characters:", nonWhitespaceChar(userString))
+        selectedOption = menu(userString)
+    # Elif statement to execute if selected menu option is "w"
+    elif selectedOption == "w":
+        # Call number of words function
+        print("\nNumber of words:", numWords(userString))
         selectedOption = menu(userString)
