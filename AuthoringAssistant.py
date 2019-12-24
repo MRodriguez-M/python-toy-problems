@@ -63,7 +63,7 @@ Edited text: we'll continue our quest in space. there will be more shuttle fligh
 """
 
 # Function to output menu options and prompt user to select an option
-def menu():
+def menu(userString):
     # Output menu
     print("\nMENU"
     "\nc - Number of non-whitespace characters"
@@ -72,23 +72,35 @@ def menu():
     "\nr - Replace punctuation"
     "\ns - Shorten spaces"
     "\nq - Quit\n")
-    # While loop to continue prompting until user input is "q"
-    while True:
-        # Prompt user to select an option
-        menuOption = input("Choose an option: ")
 
-        # If statement to check that user input is not "q"
-        if menuOption != "q":
-            # Placeholder FIXME
-            pass
-        else:
-            # Break to end program if user input is "q"
-            break
-    return
+    # Prompt user to select an option
+    menuOption = input("Choose an option: ")
+
+    # While loop to continue prompting if user input is not menu option
+    while menuOption != "q" and menuOption != "c": #FIXME add other menu options
+        menuOption = input("Choose an option: ")
+    return menuOption
+
+# Function to output number of non-whitespace characters in user string
+def nonWhitespaceChar(userString):
+    # Remove whitespace
+    newUserString = userString.replace(" ", "").replace("\t", "")
+    count = 0
+    # For loop to count number of characters in non-whitespace string
+    for i in range(len(newUserString)):
+        count += 1
+    return count
 
 # Prompt user for string and output user input
 userString = input("Enter a sample text: ")
 print("\nYou entered:", userString)
 
-# Call menu function
-menu()
+# Create global variable and call menu function
+selectedOption = menu(userString)
+# While loop to check that selected menu option is not "q", will exit program if it is
+while selectedOption != "q":
+    # If statement to execute if selected menu option is "c"
+    if selectedOption == "c":
+        # Call non-whitespace characters function
+        print("\nNumber of non-whitespace characters:", nonWhitespaceChar(userString))
+        selectedOption = menu(userString)
