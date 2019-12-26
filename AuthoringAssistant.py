@@ -77,7 +77,7 @@ def menu(userString):
     menuOption = input("Choose an option: ")
 
     # While loop to continue prompting if user input is not menu option
-    while menuOption != "q" and menuOption != "c" and menuOption != "w": #FIXME add other menu options
+    while menuOption != "q" and menuOption != "c" and menuOption != "w" and menuOption != "f" and menuOption != "r" and menuOption != "s":
         menuOption = input("Choose an option: ")
     return menuOption
 
@@ -97,6 +97,42 @@ def numWords(userString):
     words = len(userString.split())
     return words
 
+# Function to add captilization at beginning of sentences in string
+def fixCapitalization(userString):
+    # Create list for edited string and counter for characters capitalized
+    capList = []
+    capCount = 0
+    # For loop to add characters in string to a list
+    for c in userString:
+        capList.append(c)
+    # If statement to capitalize first character in string
+    if(capList[0].islower()):
+        capList[0] = userString[0].upper()
+        capCount += 1
+    
+    i = 0
+    # Boolean to help determine if character will be capitalized
+    doCap = "false"
+    # For loop to check each character in list
+    for c in capList:
+        # If statement to check character Boolean value and that it is not whitespace
+        if(doCap == "true" and c != ' ' and c != '\t'):
+            # Capitalize character if statement parameters are met
+            capList[i] = userString[i].upper()
+            capCount += 1
+            doCap = "false"
+        # If statement to check if character is end punctuation
+        if(c == '.' or c == '!' or c == '?'):
+            # Change Boolean to allow capitalization if followed by end punctuation
+            doCap = "true"
+        i += 1
+
+    capString = ""
+    # For loop to change list into edited string
+    for c in capList:
+        capString = capString + c
+    return capCount, capString
+
 # Prompt user for string and output user input
 userString = input("Enter a sample text: ")
 print("\nYou entered:", userString)
@@ -114,4 +150,11 @@ while selectedOption != "q":
     elif selectedOption == "w":
         # Call number of words function
         print("\nNumber of words:", numWords(userString))
+        selectedOption = menu(userString)
+    # Elif statement to execute if selected menu option is "f"
+    elif selectedOption == "f":
+        # Call fix capitalization function
+        num, string = fixCapitalization(userString)
+        print("\nNumber of letters capitalized:", num)
+        print("Edited text:", string)
         selectedOption = menu(userString)
