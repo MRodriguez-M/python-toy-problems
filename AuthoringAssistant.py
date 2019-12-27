@@ -133,6 +133,37 @@ def fixCapitalization(userString):
         capString = capString + c
     return capCount, capString
 
+# Function to replace exclamation marks and semicolons
+def replacePunctuation(userString):
+    # Create list for edited string
+    puncList = []
+    # For loop to add characters in string to a list
+    for c in userString:
+        puncList.append(c)
+    
+    exclamationCount = 0
+    semicolonCount = 0
+    i = 0
+    # For loop to check each character in the list
+    for c in puncList:
+        # If statement to check if character is "!"
+        if c == "!":
+            # Change character to "." and add to counter
+            puncList[i] = userString[i].replace("!", ".")
+            exclamationCount += 1
+        # Elif statement to check if character is ";"
+        elif c == ";":
+            # Change character to "," and add to counter
+            puncList[i] = userString[i].replace(";", ",")
+            semicolonCount += 1
+        i += 1
+    
+    puncString = ""
+    # For loop to change list into edited string
+    for c in puncList:
+        puncString = puncString + c
+    return exclamationCount, semicolonCount, puncString
+
 # Prompt user for string and output user input
 userString = input("Enter a sample text: ")
 print("\nYou entered:", userString)
@@ -157,4 +188,13 @@ while selectedOption != "q":
         num, string = fixCapitalization(userString)
         print("\nNumber of letters capitalized:", num)
         print("Edited text:", string)
+        selectedOption = menu(userString)
+    # Elif statement to execute if selected menu option is "r"
+    elif selectedOption == "r":
+        # Call replace punctuation function
+        excNum, semNum, pString = replacePunctuation(userString)
+        print("\nPunctuation replaced")
+        print("exclamaionCount:", excNum)
+        print("semicolonCount:", semNum)
+        print("Edited text:", pString)
         selectedOption = menu(userString)
