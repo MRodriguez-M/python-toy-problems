@@ -164,6 +164,13 @@ def replacePunctuation(userString):
         puncString = puncString + c
     return exclamationCount, semicolonCount, puncString
 
+# Function to shorten all whitespace to a single space
+def shortenSpace(userString):
+    stringCopy = userString[:]
+    # Split() combined with join() removes all whitespace and replaces it with a single space
+    shortSpace = " ".join(stringCopy.split())
+    return shortSpace
+
 # Prompt user for string and output user input
 userString = input("Enter a sample text: ")
 print("\nYou entered:", userString)
@@ -197,4 +204,9 @@ while selectedOption != "q":
         print("exclamaionCount:", excNum)
         print("semicolonCount:", semNum)
         print("Edited text:", pString)
+        selectedOption = menu(userString)
+    # Elif statement to execute if slected menu option is "s"
+    elif selectedOption == "s":
+        # Call shorten space function
+        print("\nEdited text:", shortenSpace(userString))
         selectedOption = menu(userString)
