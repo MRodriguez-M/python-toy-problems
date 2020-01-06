@@ -62,3 +62,12 @@ print("\nItem 2")
 item2.itemName = input("Enter the item name: ")
 item2.itemPrice = int(input("Enter the item price: "))
 item2.itemQuantity = int(input("Enter the item quantity: "))
+
+# Calculate total cost of items 1 and 2
+totalCost = (item1.itemPrice * item1.itemQuantity) + (item2.itemPrice * item2.itemQuantity)
+print("\nTOTAL COST")
+# Output costs information for item 1 and item 2
+item1.printItemCost()
+item2.printItemCost()
+# Output total cost for both items
+print("\nTotal: $%d" % totalCost)
