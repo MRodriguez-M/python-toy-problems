@@ -46,3 +46,19 @@ class ItemToPurchase:
     # Class method to calculate and output item cost
     def printItemCost(self):
         print("%s %d @ $%d = $%d" % (self.itemName, self.itemQuantity, self.itemPrice, (self.itemQuantity * self.itemPrice)))
+
+# Create instance for item 1
+item1 = ItemToPurchase()
+print("Item 1")
+# Prompt user for name, price, and quantity of item 1
+item1.itemName = input("Enter the item name: ")
+item1.itemPrice = int(input("Enter the item price: "))
+item1.itemQuantity = int(input("Enter the item quantity: "))
+
+# Create instance for item 2
+item2 = ItemToPurchase()
+print("\nItem 2")
+# Prompt user for name, price, and quantity of item 2
+item2.itemName = input("Enter the item name: ")
+item2.itemPrice = int(input("Enter the item price: "))
+item2.itemQuantity = int(input("Enter the item quantity: "))
