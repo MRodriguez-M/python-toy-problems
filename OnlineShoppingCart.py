@@ -100,7 +100,6 @@ Nike Romaleos: Volt color, Weightlifting shoes
 Chocolate Chips: Semi-sweet
 Powerbeats 2 Headphones: Bluetooth headphones
 
-
 (6) In main section of your code, prompt the user for a customer's name and today's date.
 Output the name and date.
 Create an object of type ShoppingCart.
@@ -169,17 +168,22 @@ Enter the item name: Nike Romaleos
 Enter the new quantity: 3
 """
 
-# Class to manage item name, price, and quantity
+# Class to manage item name, price, quantity, and description
 class ItemToPurchase:
-    # initialize attributes for name, price, quantity
-    def __init__(self, name= "none", price= 0, quantity= 0):
+    # initialize attributes for name, price, quantity, description
+    def __init__(self, name= "none", price= 0, quantity= 0, description= "none"):
         self.itemName = name
         self.itemPrice = price
         self.itemQuantity = quantity
+        self.itemDescription = description
         
     # Class method to calculate and output item cost
     def printItemCost(self):
         print("%s %d @ $%d = $%d" % (self.itemName, self.itemQuantity, self.itemPrice, (self.itemQuantity * self.itemPrice)))
+
+    # Class method to output item and its description
+    def printItemDescription(self):
+        print("%s: %s" % (self.itemName, self.itemDescription))
 
 # Create instance for item 1
 item1 = ItemToPurchase()
