@@ -185,6 +185,38 @@ class ItemToPurchase:
     def printItemDescription(self):
         print("%s: %s" % (self.itemName, self.itemDescription))
 
+# Class to manage options related to shopping cart menu
+class ShoppingCart:
+    # Initialize attributes for customer name, date, and shopping cart
+    def __init__(self, customer= "none", date= "January 1, 2016", cart= []):
+        self.customerName = customer
+        self.currentDate = date
+        self.cartItems = cart
+
+    def addItem(self, ItemToPurchase):
+        self.cartItems.append(ItemToPurchase.itemName)
+
+    def removeItem(self):
+        pass
+
+    def modifyItem(self):
+        pass
+
+    def getNumItemsInCart(self):
+        itemCount = 0
+        for i in self.cartItems:
+            itemCount += 1
+        return itemCount
+
+    def getCostOfCart(self):
+        pass
+
+    def printTotal(self):
+        pass
+    
+    def printDescriptions(self):
+        pass
+
 # Create instance for item 1
 item1 = ItemToPurchase()
 print("Item 1")
