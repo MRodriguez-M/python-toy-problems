@@ -217,6 +217,17 @@ class ShoppingCart:
     def printDescriptions(self):
         pass
 
+# Create instances for name and date
+userName = ShoppingCart()
+todayDate = ShoppingCart()
+# Prompt user for name and date
+userName.customerName = input("Enter customer's name: ")
+todayDate.currentDate = input("Enter today's date: ")
+
+# Output user name and current date
+print("Customer name:", userName.customerName)
+print("Today's date:", todayDate.currentDate)
+
 # Create instance for item 1
 item1 = ItemToPurchase()
 print("Item 1")
