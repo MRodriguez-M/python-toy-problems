@@ -217,6 +217,25 @@ class ShoppingCart:
     def printDescriptions(self):
         pass
 
+# Function to output menu options and prompt user to select an option
+def printMenu():
+    # Output menu
+    print("\nMENU"
+    "\na - Add item to cart"
+    "\nr - Remove item from cart"
+    "\nc - Change item quantity"
+    "\ni - Output items' descriptions"
+    "\no - Output shopping cart"
+    "\nq - Quit\n")
+
+    # Prompt user to select an option
+    menuOption = input("Choose an option: ")
+
+    # While loop to continue prompting if user input is not menu option
+    while menuOption != "q" and menuOption != "a" and menuOption != "r" and menuOption != "c" and menuOption != "i" and menuOption != "o":
+        menuOption = input("Choose an option: ")
+    return menuOption
+
 # Create instances for name and date
 userName = ShoppingCart()
 todayDate = ShoppingCart()
@@ -227,6 +246,13 @@ todayDate.currentDate = input("Enter today's date: ")
 # Output user name and current date
 print("Customer name:", userName.customerName)
 print("Today's date:", todayDate.currentDate)
+
+# Create global variable and call printMenu function
+selectedOption = printMenu()
+# While loop to check that selected option is not "q", will exit program if it is
+while selectedOption != "q":
+    if selectedOption == "a":
+        pass
 
 # Create instance for item 1
 item1 = ItemToPurchase()
