@@ -194,7 +194,7 @@ class ShoppingCart:
         self.cartItems = cart
 
     def addItem(self, ItemToPurchase):
-        self.cartItems.append(ItemToPurchase.itemName)
+        self.cartItems.append(ItemToPurchase())
 
     def removeItem(self):
         pass
@@ -202,17 +202,38 @@ class ShoppingCart:
     def modifyItem(self):
         pass
 
+    # Class method that uses a for loop to return total number of items in the cart
     def getNumItemsInCart(self):
         itemCount = 0
         for i in self.cartItems:
             itemCount += 1
         return itemCount
 
+    # Class method that uses a for loop to calculate and return total cost of all items in the cart
     def getCostOfCart(self):
-        pass
+        cost = 0
+        totalCost = 0
+        for i in self.cartItems:
+            cost = 0 * 0
+            totalCost += cost
+        return totalCost
 
+    # Class method that outputs all cart information
     def printTotal(self):
-        pass
+        # Output user name and current date
+        print("%s's Shopping Cart - %s" % (self.customerName, self.currentDate))
+        # If-else statement to check if shoppping cart is empty
+        if self.getCostOfCart() == 0:
+            # Print error message if cart is empty
+            print("SHOPPING CART IS EMPTY")
+        else:
+            # Call method to output number of items in cart
+            print("Number of items:", self.getNumItemsInCart())
+            print("")
+            # Call method from ItemToPurchase class to output individual item information
+            ItemToPurchase().printItemCost()
+            # Call method to output total cost
+            print("\nTotal: $", self.getCostOfCart())
     
     def printDescriptions(self):
         pass
@@ -236,16 +257,15 @@ def printMenu():
         menuOption = input("Choose an option: ")
     return menuOption
 
-# Create instances for name and date
-userName = ShoppingCart()
-todayDate = ShoppingCart()
+# Create instance for information that will be accessed from the ShoppingCart class
+userInfo = ShoppingCart()
 # Prompt user for name and date
-userName.customerName = input("Enter customer's name: ")
-todayDate.currentDate = input("Enter today's date: ")
+userInfo.customerName = input("Enter customer's name: ")
+userInfo.currentDate = input("Enter today's date: ")
 
 # Output user name and current date
-print("Customer name:", userName.customerName)
-print("Today's date:", todayDate.currentDate)
+print("Customer name:", userInfo.customerName)
+print("Today's date:", userInfo.currentDate)
 
 # Create global variable and call printMenu function
 selectedOption = printMenu()
@@ -253,6 +273,12 @@ selectedOption = printMenu()
 while selectedOption != "q":
     if selectedOption == "a":
         pass
+    # Elif statement to execute if selected option is "o"
+    elif selectedOption == "o":
+        print("\nOUTPUT SHOPPING CART")
+        # Call class method to output all shopping cart information
+        userInfo.printTotal()
+        selectedOption = printMenu()
 
 # Create instance for item 1
 item1 = ItemToPurchase()
