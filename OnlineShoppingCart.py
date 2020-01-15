@@ -193,11 +193,14 @@ class ShoppingCart:
         self.currentDate = date
         self.cartItems = cart
 
+    # Class method to add an item to the cart
     def addItem(self, itemInfo):
+        # Prompt user for item information
         name = input("Enter the item name: ")
         description = input("Enter the item description: ")
         price = int(input("Enter the item price: "))
         quantity = int(input("Enter the item quantity: "))
+        # Append all user input into cart list as a list
         self.cartItems.append(ItemToPurchase(name, price, quantity, description))
 
     def removeItem(self):
@@ -218,7 +221,7 @@ class ShoppingCart:
         cost = 0
         totalCost = 0
         for i in self.cartItems:
-            cost = 0 * 0
+            cost = i.itemPrice * i.itemQuantity
             totalCost += cost
         return totalCost
 
@@ -237,7 +240,7 @@ class ShoppingCart:
             # Call method from ItemToPurchase class to output individual item information
             ItemToPurchase().printItemCost()
             # Call method to output total cost
-            print("\nTotal: $", self.getCostOfCart())
+            print("\nTotal: $%d" % self.getCostOfCart())
     
     # Class method that outputs all item descriptions
     def printDescriptions(self):
@@ -265,7 +268,7 @@ def printMenu():
         menuOption = input("Choose an option: ")
     return menuOption
 
-# Create instance for information that will be accessed from the ShoppingCart class
+# Create instance for information that will be accessed from the ShoppingCart and ItemToPurchase classes
 userInfo = ShoppingCart()
 itemInfo = ItemToPurchase()
 # Prompt user for name and date
@@ -280,13 +283,15 @@ print("Today's date:", userInfo.currentDate)
 selectedOption = printMenu()
 # While loop to check that selected option is not "q", will exit program if it is
 while selectedOption != "q":
+    # If statement to execute if selected option is "a"
     if selectedOption == "a":
         print("\nADD ITEM TO CART")
+        # Call class method to add item to cart
         userInfo.addItem(itemInfo)
         selectedOption = printMenu()
     # Elif statement to execute if selected option is "i"
     elif selectedOption == "i":
-        print("OUTPUT ITEMS' DESCRIPTIONS")
+        print("\nOUTPUT ITEMS' DESCRIPTIONS")
         # Call class method to output all item descriptions
         userInfo.printDescriptions()
         selectedOption = printMenu()
