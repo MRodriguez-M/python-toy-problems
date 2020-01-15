@@ -193,8 +193,12 @@ class ShoppingCart:
         self.currentDate = date
         self.cartItems = cart
 
-    def addItem(self, ItemToPurchase):
-        self.cartItems.append(ItemToPurchase())
+    def addItem(self, itemInfo):
+        name = input("Enter the item name: ")
+        description = input("Enter the item description: ")
+        price = int(input("Enter the item price: "))
+        quantity = int(input("Enter the item quantity: "))
+        self.cartItems.append(ItemToPurchase(name, price, quantity, description))
 
     def removeItem(self):
         pass
@@ -263,6 +267,7 @@ def printMenu():
 
 # Create instance for information that will be accessed from the ShoppingCart class
 userInfo = ShoppingCart()
+itemInfo = ItemToPurchase()
 # Prompt user for name and date
 userInfo.customerName = input("Enter customer's name: ")
 userInfo.currentDate = input("Enter today's date: ")
@@ -276,7 +281,9 @@ selectedOption = printMenu()
 # While loop to check that selected option is not "q", will exit program if it is
 while selectedOption != "q":
     if selectedOption == "a":
-        pass
+        print("\nADD ITEM TO CART")
+        userInfo.addItem(itemInfo)
+        selectedOption = printMenu()
     # Elif statement to execute if selected option is "i"
     elif selectedOption == "i":
         print("OUTPUT ITEMS' DESCRIPTIONS")
@@ -289,19 +296,3 @@ while selectedOption != "q":
         # Call class method to output all shopping cart information
         userInfo.printTotal()
         selectedOption = printMenu()
-
-# Create instance for item 1
-item1 = ItemToPurchase()
-print("Item 1")
-# Prompt user for name, price, and quantity of item 1
-item1.itemName = input("Enter the item name: ")
-item1.itemPrice = int(input("Enter the item price: "))
-item1.itemQuantity = int(input("Enter the item quantity: "))
-
-# Create instance for item 2
-item2 = ItemToPurchase()
-print("\nItem 2")
-# Prompt user for name, price, and quantity of item 2
-item2.itemName = input("Enter the item name: ")
-item2.itemPrice = int(input("Enter the item price: "))
-item2.itemQuantity = int(input("Enter the item quantity: "))
