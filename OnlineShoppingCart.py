@@ -243,11 +243,13 @@ class ShoppingCart:
             print("\nTotal: $%d" % self.getCostOfCart())
     
     # Class method that outputs all item descriptions
-    def printDescriptions(self):
+    def printDescriptions(self, item):
         print("%s's Shopping Cart - %s" % (self.customerName, self.currentDate))
         print("\nItem Descriptions")
-        # Call method from ItemToPurchase class to output item descriptions
-        ItemToPurchase().printItemDescription()
+        # For loop to go through every item in the cart
+        for i in self.cartItems:
+            # Call method from ItemToPurchase class to output item descriptions
+            ItemToPurchase(name= i.itemName, description= i.itemDescription).printItemDescription()
 
 # Function to output menu options and prompt user to select an option
 def printMenu():
@@ -293,7 +295,7 @@ while selectedOption != "q":
     elif selectedOption == "i":
         print("\nOUTPUT ITEMS' DESCRIPTIONS")
         # Call class method to output all item descriptions
-        userInfo.printDescriptions()
+        userInfo.printDescriptions(itemInfo)
         selectedOption = printMenu()
     # Elif statement to execute if selected option is "o"
     elif selectedOption == "o":
