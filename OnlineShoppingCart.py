@@ -204,7 +204,11 @@ class ShoppingCart:
         self.cartItems.append(ItemToPurchase(name, price, quantity, description))
 
     def removeItem(self):
-        pass
+        deleteItem = input("Enter name of item to remove: ")
+        if deleteItem in self.cartItems:
+            self.cartItems.remove(deleteItem)
+        else:
+            print("Item not found in cart. Nothing removed.")
 
     def modifyItem(self):
         pass
@@ -292,6 +296,10 @@ while selectedOption != "q":
         print("\nADD ITEM TO CART")
         # Call class method to add item to cart
         userInfo.addItem(itemInfo)
+        selectedOption = printMenu()
+    elif selectedOption == "r":
+        print("\nREMOVE ITEM FROM CART")
+        userInfo.removeItem()
         selectedOption = printMenu()
     # Elif statement to execute if selected option is "i"
     elif selectedOption == "i":
