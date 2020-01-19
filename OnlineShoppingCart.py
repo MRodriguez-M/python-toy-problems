@@ -226,7 +226,7 @@ class ShoppingCart:
         return totalCost
 
     # Class method that outputs all cart information
-    def printTotal(self):
+    def printTotal(self, item):
         # Output user name and current date
         print("%s's Shopping Cart - %s" % (self.customerName, self.currentDate))
         # If-else statement to check if shoppping cart is empty
@@ -237,8 +237,10 @@ class ShoppingCart:
             # Call method to output number of items in cart
             print("Number of items:", self.getNumItemsInCart())
             print("")
-            # Call method from ItemToPurchase class to output individual item information
-            ItemToPurchase().printItemCost()
+            # For loop to go through every item in the cart
+            for i in self.cartItems:
+                # Call method from ItemToPurchase class to output individual item information
+                ItemToPurchase(name= i.itemName, price= i.itemPrice, quantity= i.itemQuantity).printItemCost()
             # Call method to output total cost
             print("\nTotal: $%d" % self.getCostOfCart())
     
@@ -301,5 +303,5 @@ while selectedOption != "q":
     elif selectedOption == "o":
         print("\nOUTPUT SHOPPING CART")
         # Call class method to output all shopping cart information
-        userInfo.printTotal()
+        userInfo.printTotal(itemInfo)
         selectedOption = printMenu()
