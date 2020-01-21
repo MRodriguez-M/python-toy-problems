@@ -203,12 +203,27 @@ class ShoppingCart:
         # Append all user input into cart list as a list
         self.cartItems.append(ItemToPurchase(name, price, quantity, description))
 
+    # Class method to remove an item from the cart
     def removeItem(self):
+        # Boolean to determine if item is in cart
+        notAvailable = False
+        # Prompt user for name of item to be removed
         deleteItem = input("Enter name of item to remove: ")
-        if deleteItem in self.cartItems:
-            self.cartItems.remove(deleteItem)
-        else:
-            print("Item not found in cart. Nothing removed.")
+        # For loop to go through cart
+        for item in self.cartItems:
+            # If statement to check if user input matches name of an item in the cart
+            if item.itemName == deleteItem:
+                # Use remove method to delete item from cart and break to stop searching the cart
+                self.cartItems.remove(item)
+                notAvailable = False
+                break
+            else:
+                # Change Boolean status if user input does not match any item name in the cart
+                notAvailable = True
+
+        # If statement to output error message if user input is not found in cart
+        if notAvailable == True:
+                print("Item not found in cart. Nothing removed.")
 
     def modifyItem(self):
         pass
@@ -297,8 +312,10 @@ while selectedOption != "q":
         # Call class method to add item to cart
         userInfo.addItem(itemInfo)
         selectedOption = printMenu()
+    # If statement to execute if selected option is "r"
     elif selectedOption == "r":
         print("\nREMOVE ITEM FROM CART")
+        # Call class method to remove item from cart
         userInfo.removeItem()
         selectedOption = printMenu()
     # Elif statement to execute if selected option is "i"
