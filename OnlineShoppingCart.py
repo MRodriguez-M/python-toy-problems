@@ -225,8 +225,27 @@ class ShoppingCart:
         if notAvailable == True:
                 print("Item not found in cart. Nothing removed.")
 
+    # Class method to modify quantity of item in cart
     def modifyItem(self):
-        pass
+        # Boolean to determine if item is in cart
+        unavailable = False
+        # Prompt user for name of item to modify
+        editItem = input("Enter the item name: ")
+        # For loop to go through cart
+        for item in self.cartItems:
+            # If statement to check if user input matches name of item in cart
+            if item.itemName == editItem:
+                # Prompt user for new quqntity value and modify the old value with the new
+                newQuantity = int(input("Enter the new quantity: "))
+                item.itemQuantity = newQuantity
+                unavailable = False
+                break
+            else:
+                unavailable = True
+        
+        if unavailable == True:
+            # Output error message if user input is not found in cart
+            print("Item not found in cart. Nothing modified.")
 
     # Class method that uses a for loop to return total number of items in the cart
     def getNumItemsInCart(self):
@@ -312,11 +331,17 @@ while selectedOption != "q":
         # Call class method to add item to cart
         userInfo.addItem(itemInfo)
         selectedOption = printMenu()
-    # If statement to execute if selected option is "r"
+    # Elif statement to execute if selected option is "r"
     elif selectedOption == "r":
         print("\nREMOVE ITEM FROM CART")
         # Call class method to remove item from cart
         userInfo.removeItem()
+        selectedOption = printMenu()
+    # Elif statement to execute if selected option is "c"
+    elif selectedOption == "c":
+        print("\nCHANGE ITEM QUANTITY")
+        # Call class method to modify quantity of cart item
+        userInfo.modifyItem()
         selectedOption = printMenu()
     # Elif statement to execute if selected option is "i"
     elif selectedOption == "i":
