@@ -6,8 +6,20 @@ Write a function that accepts an array of 10 integers (between 0 and 9), that re
 
 # Function to create phone number in proper format
 def createPhoneNumber():
+    # Create variable for formatted phone number
     phoneNumber = "("
-    for digit in numberList:
+    # For loop to add first three digits to phone number
+    for digit in numberList[:3]:
+        phoneNumber = phoneNumber + digit
+    
+    phoneNumber = phoneNumber + ") "
+    # For lopp to add next three digits to phone number
+    for digit in numberList[3:6]:
+        phoneNumber = phoneNumber + digit
+
+    phoneNumber = phoneNumber + "-"
+    # For loop to add last four digits to phone number
+    for digit in numberList[6:]:
         phoneNumber = phoneNumber + digit
     return phoneNumber
 
