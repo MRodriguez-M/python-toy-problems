@@ -16,6 +16,9 @@ def likes(names):
     # If statement to execute if list has no names
     if len(names) == 0:
         output = "no one likes this"
+    # Elif statement to execute if list has only 1 name
+    elif len(names) == 1:
+        output = names[0] + " likes this"
     elif len(names) == 3:
         for n in range(len(names)):
             output = output + likeList[n] + ", "
