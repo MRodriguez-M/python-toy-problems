@@ -13,9 +13,13 @@ For 4 or more names, the number in "and 2 others" simply increases.
 
 def likes(names):
     output = ""
-    for n in range(len(likeList)):
-        output = output + likeList[n] + ", "
-    output = output + "like this"
+    # If statement to execute if list has no names
+    if len(names) == 0:
+        output = "no one likes this"
+    elif len(names) == 3:
+        for n in range(len(names)):
+            output = output + likeList[n] + ", "
+        output = output + "like this"
     return output
 
 likeList = []
@@ -34,4 +38,4 @@ while endPrompt != True:
         # Change Boolean to end prompt if user input is "q"
         endPrompt = True
 # Print output based list of names by calling function
-print(likes(likeList))
+print("\n" + likes(likeList))
