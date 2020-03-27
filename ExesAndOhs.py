@@ -23,3 +23,9 @@ def xo(s):
         # Elif statement to add character in string to list if it is "o"
         elif i == "o":
             ohList.append(i)
+    # If statement to return True if lists have the same number of elements
+    if len(exList) == len(ohList):
+        return True
+    # Else statement to return False if lists do not have the same number of elements
+    else:
+        return False
